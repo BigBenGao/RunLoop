@@ -26,6 +26,10 @@ static NSString * const cellIdentifier = @"cellIdentifier";
     {
          _tableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds];
         [_tableView registerClass:[CustomCell class] forCellReuseIdentifier:cellIdentifier];
+          /*如果你需要estimatedRowHeight该属性,那么就修改DistributionTool的maxTask属性*/
+         _tableView.estimatedRowHeight = 0.0;
+         _tableView.estimatedSectionHeaderHeight = 0.0;
+         _tableView.estimatedSectionFooterHeight = 0.0;
          _tableView.delegate = self;
          _tableView.dataSource = self;
     }
